@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle, Volume2, VolumeX } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import cobotcodingvideo1 from "../../assets/cobotcodingvideo1.mp4";
-import cobotcodingvideo2 from "../../assets/cobotcodingvideo2.mp4";
+// import cobotcodingvideo2 from "../../assets/cobotcodingvideo2.mp4";
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -48,7 +48,7 @@ const Hero = () => {
         >
           {/* Add multiple video sources for better browser compatibility */}
           <source src={cobotcodingvideo1} type="video/webm" />
-          <source src={cobotcodingvideo2} type="video/webm" />
+          <source src={cobotcodingvideo1} type="video/webm" />
           Your browser does not support the video tag.
         </video>
 
