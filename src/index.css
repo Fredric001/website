@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 217 73% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 73% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 73% 22%;
+
+    --primary: 217 73% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 217 73% 22%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 217 20% 45%;
+
+    --accent: 43 74% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 73% 22%;
+
+    --radius: 0.5rem;
+    
+    --crimson: 348 83% 47%;
+    --gold: 43 74% 53%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(217, 73%, 22%) 0%, hsl(217, 73%, 32%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(43, 74%, 53%) 0%, hsl(43, 84%, 63%) 100%);
+    
+    --shadow-soft: 0 4px 20px rgba(15, 43, 95, 0.08);
+    --shadow-hover: 0 8px 30px rgba(15, 43, 95, 0.15);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 217 73% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 217 73% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 217 73% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 43 74% 53%;
+    --primary-foreground: 217 73% 12%;
+
+    --secondary: 217 50% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 50% 20%;
+    --muted-foreground: 217 20% 70%;
+
+    --accent: 43 74% 53%;
+    --accent-foreground: 217 73% 12%;
+
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 50% 25%;
+    --input: 217 50% 25%;
+    --ring: 43 74% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+
+/* Container */
+.wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+/* Main white box */
+.main-box {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 3;
+    border: 15px solid #b30059;   /* Magenta border */
+}
+
+.main-box img {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: auto;
+}
+
+/* Decorative shapes */
+.shape {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+/* Blue shape bottom-left */
+.shape-blue {
+    background: #00a8e8;
+    bottom: -40px;
+    left: -40px;
+    transform: rotate(5deg);
+}
+
+/* Green shape top-right */
+.shape-green {
+    background: #8cc63f;
+    top: -40px;
+    right: -40px;
+    transform: rotate(-8deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Top background image area */
+.top-image {
+    background: url('bg.jpg') center/cover no-repeat;
+    height: 300px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    align-self: center;
+}
+
+/* Kids image */
+.kids {
+    position: absolute;
+    bottom: 0;
+    /* height: 260px; */
+    object-fit: contain;
+}
+
+/* White content card */
+.content-box {
+   max-width: 370px;
+    background: #fff;
+    padding: 30px;
+    margin-top: -100px;
+    margin-left: 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.content-box h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #002B45;
+}
+
+.content-box p {
+    margin: 15px 0 25px;
+    line-height: 1.7;
+    color: #4a4a4a;
+}
+
+/* Learn More Button */
+.btn {
+    background: #00AEEF;
+    padding: 12px 25px;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+}
