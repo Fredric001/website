@@ -1,120 +1,95 @@
 import React from "react";
 
 function WhyCobot() {
+  const features = [
+    {
+      id: 1,
+      title: "World-class, certified curriculum",
+      description: "We unlock the world of programming, artificial intelligence and digital literacy for all. Our curriculum features fully gamified, modular, and intelligent lessons, transforming learning into an exciting adventure, using modern tools for coding, video editing, AI and more. Tailored to different age groups, each module paves the perfect path for every learner, ensuring an engaging and fun educational journey.",
+      image: "https://assets.logiscool.com/f/57188/1100x620/89cd03fefb/curriculum-image-eaf-benefit-550x310px.jpg",
+      bgImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 2,
+      title: "Expert mentors & personalized guidance",
+      description: "Our certified instructors provide personalized attention to each student. With small class sizes and experienced mentors, we ensure every child receives the support they need to thrive in their learning journey.",
+      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      bgImage: "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 3,
+      title: "Hands-on project based learning",
+      description: "Children learn best by doing. Our project-based approach allows students to apply their knowledge to real-world scenarios, building games, apps, and creative projects that they can be proud of.",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      bgImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: 4,
+      title: "Future-ready skills development",
+      description: "Prepare your child for the digital future with skills in AI, coding, robotics, and creative problem-solving. We focus on 21st-century competencies that will serve them throughout their lives.",
+      image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      bgImage: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    }
+  ];
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-           Give a boost to your child's future with us
+            Give a boost to your child's future with us
           </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Discover why thousands of parents choose CobotKids for their children's digital education
+          </p>
         </div>
-       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-         <div className="container mx-auto ">
-          <div className="top-image">
-            <img
-              src="https://assets.logiscool.com/f/57188/1100x620/89cd03fefb/curriculum-image-eaf-benefit-550x310px.jpg"
-              alt="Kids"
-              className="kids"
-            />
-            {/* <img src="certificate.png" alt="Certificate" className="certificate"/> */}
-          </div>
 
-          <div className="content-box">
-            <h2>World-class, certified curriculum</h2>
-            <p>
-              We unlock the world of programming, artificial intelligence and
-              digital literacy for all. Our curriculum features fully gamified,
-              modular, and intelligent lessons, transforming learning into an
-              exciting adventure, using modern tools for coding, video editing,
-              AI and more. Tailored to different age groups, each module paves
-              the perfect path for every learner, ensuring an engaging and fun
-              educational journey.
-            </p>
-            <a href="#" className="btn">
-              LEARN MORE
-            </a>
-          </div>
-        </div>
-        <div className="container mx-auto px-4">
-          <div className="top-image">
-            <img
-              src="https://assets.logiscool.com/f/57188/1100x620/89cd03fefb/curriculum-image-eaf-benefit-550x310px.jpg"
-              alt="Kids"
-              className="kids"
-            />
-            {/* <img src="certificate.png" alt="Certificate" className="certificate"/> */}
-          </div>
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature) => (
+            <div key={feature.id} className="flex flex-col">
+              {/* Top Image Area */}
+              <div 
+                className="h-72 bg-center bg-cover bg-no-repeat rounded-lg overflow-hidden relative"
+                style={{ backgroundImage: `url('${feature.bgImage}')` }}
+              >
+                {/* Kids Image */}
+                <img
+                  src={feature.image}
+                  alt="Kids learning"
+                  className="absolute bottom-0 object-contain max-h-64 mx-auto left-0 right-0"
+                />
+              </div>
 
-          <div className="content-box">
-            <h2>World-class, certified curriculum</h2>
-            <p>
-              We unlock the world of programming, artificial intelligence and
-              digital literacy for all. Our curriculum features fully gamified,
-              modular, and intelligent lessons, transforming learning into an
-              exciting adventure, using modern tools for coding, video editing,
-              AI and more. Tailored to different age groups, each module paves
-              the perfect path for every learner, ensuring an engaging and fun
-              educational journey.
-            </p>
-            <a href="#" className="btn">
-              LEARN MORE
-            </a>
-          </div>
+              {/* Content Box */}
+              <div className="max-w-[370px] bg-white p-7 md:p-8 -mt-24 ml-2.5 rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.15)] relative z-10">
+                <h2 className="text-2xl font-bold text-[#002B45] mb-4">
+                  {feature.title}
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {feature.description}
+                </p>
+                <a 
+                  href="#" 
+                  className="bg-[#00AEEF] px-6 py-3 text-white font-bold rounded-full inline-block hover:bg-[#0099d6] transition-colors duration-300"
+                >
+                  LEARN MORE
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="container mx-auto px-4">
-          <div className="top-image">
-            <img
-              src="https://assets.logiscool.com/f/57188/1100x620/89cd03fefb/curriculum-image-eaf-benefit-550x310px.jpg"
-              alt="Kids"
-              className="kids"
-            />
-            {/* <img src="certificate.png" alt="Certificate" className="certificate"/> */}
-          </div>
 
-          <div className="content-box">
-            <h2>World-class, certified curriculum</h2>
-            <p>
-              We unlock the world of programming, artificial intelligence and
-              digital literacy for all. Our curriculum features fully gamified,
-              modular, and intelligent lessons, transforming learning into an
-              exciting adventure, using modern tools for coding, video editing,
-              AI and more. Tailored to different age groups, each module paves
-              the perfect path for every learner, ensuring an engaging and fun
-              educational journey.
-            </p>
-            <a href="#" className="btn">
-              LEARN MORE
-            </a>
-          </div>
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            Start Free Trial Today
+          </button>
+          <p className="text-gray-500 mt-4 text-sm">
+            No credit card required • 14-day money-back guarantee
+          </p>
         </div>
-        <div className="container mx-auto px-4">
-          <div className="top-image">
-            <img
-              src="https://assets.logiscool.com/f/57188/1100x620/89cd03fefb/curriculum-image-eaf-benefit-550x310px.jpg"
-              alt="Kids"
-              className="kids"
-            />
-            {/* <img src="certificate.png" alt="Certificate" className="certificate"/> */}
-          </div>
-
-          <div className="content-box">
-            <h2>World-class, certified curriculum</h2>
-            <p>
-              We unlock the world of programming, artificial intelligence and
-              digital literacy for all. Our curriculum features fully gamified,
-              modular, and intelligent lessons, transforming learning into an
-              exciting adventure, using modern tools for coding, video editing,
-              AI and more. Tailored to different age groups, each module paves
-              the perfect path for every learner, ensuring an engaging and fun
-              educational journey.
-            </p>
-            <a href="#" className="btn">
-              LEARN MORE
-            </a>
-          </div>
-        </div>
-       </div>
       </div>
     </section>
   );

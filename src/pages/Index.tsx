@@ -11,6 +11,7 @@ import SubBlog from "@/components/home/SubBlog";
 import Acheivements from "@/components/home/Acheivements";
 import WhyCobot from "@/components/home/WhyCobot";
 import New from "@/components/home/New";
+import LevelAndPartnership from "@/components/home/LevelAndPartnership";
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -28,6 +29,7 @@ const Index = () => {
         <WhyCobot/>
         <Strips/>
         <New/>
+        <LevelAndPartnership/>
         <CTA />
       </main>
       <Footer />
