@@ -6,7 +6,7 @@ function LogoSliderSimple() {
   const logos = [
     {
       id: 1,
-      name: "Microsoft",
+  
       src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/800px-Microsoft_logo.svg.png",
       color: "#00A1F1"
     },
@@ -56,10 +56,8 @@ function LogoSliderSimple() {
   }
 
   return (
-    <div className="py-10  bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">      
-
-       {/* Logo Slider */}
+    <>
+    {/* Logo Slider */}
         <div className="relative max-w-4xl mx-auto ">
           {/* Logo Container */}
           <div className="overflow-hidden">
@@ -85,13 +83,8 @@ function LogoSliderSimple() {
                             className="h-10 md:h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                           />
                         </div>
-                        {/* Tooltip */}
-                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block">
-                          <div className="bg-gray-900 text-white text-sm px-3 py-1 rounded whitespace-nowrap">
-                            {logo.name}
-                          </div>
-                          <div className="w-2 h-2 bg-gray-900 rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
-                        </div>
+                     
+                        
                       </div>
                     ))}
                   </div>
@@ -116,48 +109,10 @@ function LogoSliderSimple() {
             ))}
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => setActiveSlide(prev => (prev - 1 + slides.length) % slides.length)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 bg-white p-3 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300"
-            aria-label="Previous slide"
-          >
-            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+         
           
-          <button
-            onClick={() => setActiveSlide(prev => (prev + 1) % slides.length)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 bg-white p-3 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300"
-            aria-label="Next slide"
-          >
-            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
         </div>
-
-        {/* Stats */}
-        {/* <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-          {[
-            { value: "50+", label: "Partner Companies" },
-            { value: "100K+", label: "Students Trained" },
-            { value: "95%", label: "Satisfaction Rate" },
-            { value: "10+", label: "Years Experience" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-[#00AEEF] mb-1">
-                {stat.value}
-              </div>
-              <div className="text-gray-600 text-sm md:text-base">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div> */}
-      </div>
-    </div>
+    </>
   );
 }
 

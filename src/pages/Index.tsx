@@ -13,7 +13,7 @@ import Acheivements from "@/components/home/Acheivements";
 import WhyCobot from "@/components/home/WhyCobot";
 import New from "@/components/home/New";
 import LevelAndPartnership from "@/components/home/LevelAndPartnership";
-
+import Logo from "@/components/Logo";
 const Index = () => {
   const [loading, setLoading] = useState(true);
 
@@ -25,39 +25,53 @@ const Index = () => {
 
     return () => clearTimeout(timer);
   }, []);
-if (loading) {
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
-      <div className="text-center">
-        <div className="flex items-center justify-center space-x-2 mb-4">
-          <div className="w-8 h-12 bg-primary rounded-sm animate-bounce [animation-delay:-0.3s]"></div>
-          <div className="w-8 h-12 bg-primary rounded-sm animate-bounce [animation-delay:-0.15s]"></div>
-          <div className="w-8 h-12 bg-primary rounded-sm animate-bounce"></div>
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
+        <div className="text-center">
+          <div className="flex items-center justify-center space-x-2 mb-1">
+            <div className="  rounded-sm animate-bounce [animation-delay:-0.3s]">
+              <Logo />
+            </div>
+          </div>
+          <div className="flex items-center justify-center space-x-2 mb-2">
+            <h2 className="text-2xl font-serif font-bold text-foreground  rounded-sm animate-bounce [animation-delay:-0.3s]">
+              Cobot
+            </h2>
+            <h2 className="text-2xl font-serif font-bold text-foreground  rounded-sm animate-bounce [animation-delay:-0.6s]">
+              Kids
+            </h2>
+            <h2 className="text-2xl font-serif font-bold text-foreground   rounded-sm animate-bounce">
+              Academy
+            </h2>
+          </div>
+
+          <p className=" text-muted-foreground">
+            Empowering young minds through innovative technology education in
+            Kenya.
+          </p>
         </div>
-        <h2 className="text-2xl font-serif font-bold text-foreground">Cobot Kids Academy</h2>
-        <p className="mt-2 text-muted-foreground">Empowering young minds through innovative technology education in Kenya.</p>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
   return (
     <div className="min-h-screen">
-      <TopNavigation/>
+      <TopNavigation />
       <Navigation />
       <main>
         <Hero />
         <Features />
         <Stats />
-        <Strips/>
-        <SubBlog/>
-        <Strips/>
-        <Acheivements/>
+        <Strips />
+        <SubBlog />
+        <Strips />
+        <Acheivements />
         <Testimonials />
-        <WhyCobot/>
-        <Strips/>
-        <New/>
-        <LevelAndPartnership/>
+        <WhyCobot />
+        <Strips />
+        <New />
+        <LevelAndPartnership />
         <CTA />
       </main>
       <Footer />

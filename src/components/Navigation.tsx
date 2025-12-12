@@ -37,6 +37,7 @@ const Navigation = () => {
     { name: "Exams", path: "/exams" },
     { name: "Blog", path: "/blog" },
   ];
+  
 
   const programsLinks = [
     { name: "Open Day", path: "/open-day" },
@@ -114,7 +115,7 @@ const Navigation = () => {
                     
                     {/* Dropdown Menu */}
                     {openDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg py-2 animate-in slide-in-from-top-5 duration-200">
+                      <div style={{zIndex:"1"}} className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg py-2 animate-in slide-in-from-top-5 duration-200">
                         {item.dropdown.map((link) => (
                           <Link
                             key={link.path}

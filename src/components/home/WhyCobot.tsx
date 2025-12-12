@@ -52,7 +52,6 @@ function WhyCobot() {
               {/* Top Image Area */}
               <div 
                 className="h-72 bg-center bg-cover bg-no-repeat rounded-lg overflow-hidden relative"
-                style={{ backgroundImage: `url('${feature.bgImage}')` }}
               >
                 {/* Kids Image */}
                 <img
@@ -63,7 +62,7 @@ function WhyCobot() {
               </div>
 
               {/* Content Box */}
-              <div className="max-w-[370px] bg-white p-7 md:p-8 -mt-24 ml-2.5 rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.15)] relative z-10">
+              <div style={{alignSelf:"center"}} className="max-w-[370px] bg-white p-7 md:p-8 -mt-24  shadow-[0_10px_25px_rgba(0,0,0,0.15)] relative z-10">
                 <h2 className="text-2xl font-bold text-[#002B45] mb-4">
                   {feature.title}
                 </h2>

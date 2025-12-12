@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
-    <section className="py-20 bg-gradient-hero text-primary-foreground">
+    <section className="py-20 text-foreground">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6"
+          style={{fontFamily:"Raleway, Manrope, Cairo, Helvetica Neue, Arial, -apple-system, BlinkMacSystemFont, Apple Color Emoji, Segoe UI, Segoe UI Emoji, Segoe UI Symbol, sans-serif"}}>
             Ready to Start Your Journey?
           </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 leading-relaxed">
+          <p className="text-lg text-foreground mb-8 leading-relaxed">
             Join thousands of successful students who have achieved their dreams with Logi Academy.
             Book a free consultation today and discover your potential.
           </p>
@@ -22,7 +23,7 @@ const CTA = () => {
               </Button>
             </Link>
             <Link to="/courses">
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button size="lg" variant="outline" className="border-primary-foreground bg-gradient-to-r from-blue-600 to-orange-500 text-primary-foreground hover:bg-primary-foreground ">
                 View All Courses
               </Button>
             </Link>

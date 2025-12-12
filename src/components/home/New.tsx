@@ -1,5 +1,5 @@
 import React from "react";
-
+import CTA from "@/components/home/CTA"
 function New() {
   const articles = [
     {
@@ -104,7 +104,7 @@ function New() {
         </div>
 
         {/* CTA Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 to-purple-600 p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 to-orange-500 p-8 md:p-12">
           <div className="relative z-10 text-center max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold text-white mb-4">
               Want to see more insights?

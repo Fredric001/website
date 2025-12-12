@@ -31,8 +31,8 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/20 to-primary/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-hero-overlay z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/20 to-primary/30 " />
+        <div className="absolute inset-0 bg-gradient-hero-overlay  " />
 
         {/* Video element */}
         <video
@@ -54,7 +54,7 @@ const Hero = () => {
 
         {/* Loading fallback */}
         {isLoading && (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-foreground z-30 flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-foreground z-3 flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-accent"></div>
           </div>
         )}
@@ -85,18 +85,18 @@ const Hero = () => {
       </button>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-30">
+      <div className="container mx-auto px-4 relative ">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-primary-foreground pt-20 lg:pt-0">
-            <div className="inline-block px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full text-accent font-medium text-sm mb-6 animate-fade-in">
+            {/* <div className="inline-block px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full text-accent font-medium text-sm mb-6 animate-fade-in"  style={{fontFamily:"Raleway, Manrope, Cairo, Helvetica Neue, Arial, -apple-system, BlinkMacSystemFont, Apple Color Emoji, Segoe UI, Segoe UI Emoji, Segoe UI Symbol, sans-serif"}}>
               Elite University Preparation Since 2024
-            </div>
+            </div> */}
 
             <h1
               className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in"
-              style={{ animationDelay: "0.1s" }}
-            >
+           
+               style={{animationDelay: "0.1s" ,fontFamily:"Raleway, Manrope, Cairo, Helvetica Neue, Arial, -apple-system, BlinkMacSystemFont, Apple Color Emoji, Segoe UI, Segoe UI Emoji, Segoe UI Symbol, sans-serif"}}>            
               Choose the best.
               <br />
               <span className="text-accent">

@@ -62,7 +62,16 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="w-full flex-shrink-0 px-4">
                 <Card className="p-8 bg-background border-border hover:shadow-xl transition-shadow mx-auto max-w-2xl">
-                  <div className="flex mb-4">
+                   <div className="flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="font-serif font-bold text-primary text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                     
+                    </div>
+                  <div className="flex items-center justify-center mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="text-accent fill-accent" size={18} />
                     ))}
@@ -71,15 +80,8 @@ const Testimonials = () => {
                     "{testimonial.quote}"
                   </p>
                   <div className="flex items-center justify-center space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="font-serif font-bold text-primary text-lg">
-                        {testimonial.name.charAt(0)}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.university}</div>
-                    </div>
+                    
+                   
                   </div>
                 </Card>
               </div>

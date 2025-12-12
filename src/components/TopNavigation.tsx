@@ -40,8 +40,8 @@ const TopNavigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="font-serif text-2xl font-bold text-primary">
+          <Link to="/" className="flex items-center space-x-1">
+            <div className=" text-2xl font-bold text-primary">
             +254718671256
             </div>
           </Link>
@@ -63,13 +63,13 @@ const TopNavigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          {/* <button
             className="md:hidden p-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Navigation */}
