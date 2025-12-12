@@ -16,15 +16,12 @@ const TopNavigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const navLinks = [
-  //   { name: "For Schools", path: "/" },
-  //   { name: "Own a franchise", path: "/courses" },
-  //   { name: "Find a Program", path: "/methodology" },
-  //   { name: "MyCobotSchool", path: "/results" },
-  //   { name: "Teachers", path: "/teachers" },
-  //   { name: "Cart", path: "/blog" },
-  //   { name: "Search", path: "/contact" },
-  // ];
+  const MobileLinks = [
+    { name: "For Schools", path: "/" },
+    { name: "Search", path: "/contact" },
+      { name: "About Us", path: "/aboutUs" },
+    { name: "Programs", path: "/programs" },
+  ];
 
     const navLinks = [
     { name: "For Schools", path: "/" },
@@ -76,9 +73,9 @@ const TopNavigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
+         {isMobileMenuOpen && (
           <div className="md:hidden py-4 space-y-3 border-t border-border">
-            {navLinks.map((link) => (
+            {MobileLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -90,7 +87,9 @@ const TopNavigation = () => {
                 {link.name}
               </Link>
             ))}
-           
+            <Button variant="default" size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+              Location
+            </Button>
           </div>
         )}
       </div>

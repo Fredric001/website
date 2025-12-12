@@ -86,9 +86,6 @@ function WhyCobot() {
           <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             Start Free Trial Today
           </button>
-          <p className="text-gray-500 mt-4 text-sm">
-            No credit card required • 14-day money-back guarantee
-          </p>
         </div>
       </div>
     </section>

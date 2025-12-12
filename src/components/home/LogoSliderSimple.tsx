@@ -56,24 +56,15 @@ function LogoSliderSimple() {
   }
 
   return (
-    <div className="py-10 md:py-16 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-            Trusted by Industry Leaders
-          </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Join thousands of organizations that trust our platform for their educational needs
-          </p>
-        </div>
+    <div className="py-10  bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4">      
 
-        {/* Logo Slider */}
-        <div className="relative max-w-4xl mx-auto">
+       {/* Logo Slider */}
+        <div className="relative max-w-4xl mx-auto ">
           {/* Logo Container */}
           <div className="overflow-hidden">
             <div 
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-500 mb-6 ease-in-out"
               style={{ transform: `translateX(-${activeSlide * 100}%)` }}
             >
               {slides.map((slideLogos, index) => (
@@ -148,7 +139,7 @@ function LogoSliderSimple() {
         </div>
 
         {/* Stats */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+        {/* <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
           {[
             { value: "50+", label: "Partner Companies" },
             { value: "100K+", label: "Students Trained" },
@@ -164,7 +155,7 @@ function LogoSliderSimple() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -10,11 +10,12 @@ function New() {
       description: "Parents often hear the prediction that artificial intelligence will take over jobs. It is an understandable concern: machines are becoming faster, more capable, and able to do things we once believed were reserved for humans.",
       image: "https://assets.logiscool.com/f/57188/1100x620/89cd03fefb/curriculum-image-eaf-benefit-550x310px.jpg",
       link: "#",
-      gradient: "from-blue-500 to-cyan-400"
+      gradient: "from-blue-500 to-cyan-400",
+      
     },
     {
       id: 2,
-      category: "COBOTKIDS",
+     
       title: "Give the Gift of Knowledge",
       date: "November 18, 2025",
       description: "This holiday season, instead of choosing another toy that may soon be forgotten, surprise your child or grandchild with something truly lasting: the joy of learning and creating.",
