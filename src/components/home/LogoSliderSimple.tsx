@@ -7,31 +7,31 @@ function LogoSliderSimple() {
     {
       id: 1,
   
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/800px-Microsoft_logo.svg.png",
+      src: "https://juniorschool.rockfields.ac.ke/wp-content/uploads/2024/08/junior-school-1.png",
       color: "#00A1F1"
     },
     {
       id: 2,
-      name: "Vodafone",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Vodafone_2017_logo.svg/800px-Vodafone_2017_logo.svg.png",
+      name: "Pola Junior School",
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaaRZfYQhr1ZnmYqRXCTDVHpgMLgsMooXMQg&s",
       color: "#E60000"
     },
     {
       id: 3,
-      name: "Google",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png",
+      name: "zuwena international school",
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ec37tmuVMnqg9e2qjvYE2gauHV1CjAz13w&s",
       color: "#4285F4"
     },
     {
       id: 4,
-      name: "Amazon",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/800px-Amazon_logo.svg.png",
+      name: "The Ark Junior School",
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR003DCNpg4-aGUucxQojjK4wcFbna8e37Whw&s",
       color: "#FF9900"
     },
     {
       id: 5,
-      name: "Apple",
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png",
+      name: "Graceland Christian School",
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbe0k0vdviDQT-Lzn-FMcOUVUFY3CUTPOVoA&s",
       color: "#000000"
     },
     {
