@@ -7,8 +7,7 @@ import Logo from "../components/Logo";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [mobileOpenDropdown, setMobileOpenDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const location = useLocation();
   const dropdownRef = useRef(null);
 
@@ -20,11 +19,11 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside (for mobile)
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setActiveDropdown(null);
+        setOpenDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -62,6 +61,14 @@ const Navigation = () => {
     },
   ];
 
+  const toggleDropdown = (itemName) => {
+    setOpenDropdown(openDropdown === itemName ? null : itemName);
+  };
+
+  const closeDropdown = () => {
+    setOpenDropdown(null);
+  };
+
   const isDropdownActive = (item) => {
     if (item.path === location.pathname) return true;
     if (item.dropdown) {
@@ -78,7 +85,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" onClick={closeDropdown}>
             <div className="font-serif text-2xl font-bold text-primary">
               <Logo/>
             </div>
@@ -87,16 +94,11 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8" ref={dropdownRef}>
             {navItems.map((item) => (
-              <div 
-                key={item.name} 
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+              <div key={item.name} className="relative">
                 {item.dropdown ? (
                   <div className="relative">
-                    <Link
-                      to={item.path}
+                    <button
+                      onClick={() => toggleDropdown(item.name)}
                       className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary ${
                         isDropdownActive(item) ? "text-primary" : "text-foreground"
                       }`}
@@ -105,18 +107,19 @@ const Navigation = () => {
                       <ChevronDown 
                         size={16} 
                         className={`transition-transform duration-200 ${
-                          activeDropdown === item.name ? "rotate-180" : ""
+                          openDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
-                    </Link>
+                    </button>
                     
                     {/* Dropdown Menu */}
-                    {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg py-2 animate-in slide-in-from-top-5 duration-200 z-50">
+                    {openDropdown === item.name && (
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg py-2 animate-in slide-in-from-top-5 duration-200">
                         {item.dropdown.map((link) => (
                           <Link
                             key={link.path}
                             to={link.path}
+                            onClick={closeDropdown}
                             className={`block px-4 py-2 text-sm transition-colors hover:bg-primary/10 hover:text-primary ${
                               location.pathname === link.path 
                                 ? "bg-primary/10 text-primary" 
@@ -132,6 +135,7 @@ const Navigation = () => {
                 ) : (
                   <Link
                     to={item.path}
+                    onClick={closeDropdown}
                     className={`text-sm font-medium transition-colors hover:text-primary ${
                       location.pathname === item.path ? "text-primary" : "text-foreground"
                     }`}
@@ -164,9 +168,7 @@ const Navigation = () => {
                 {item.dropdown ? (
                   <div>
                     <button
-                      onClick={() => setMobileOpenDropdown(
-                        mobileOpenDropdown === item.name ? null : item.name
-                      )}
+                      onClick={() => toggleDropdown(item.name)}
                       className={`flex items-center justify-between w-full text-left text-sm font-medium py-2 ${
                         isDropdownActive(item) ? "text-primary" : "text-foreground"
                       }`}
@@ -175,18 +177,21 @@ const Navigation = () => {
                       <ChevronDown 
                         size={16} 
                         className={`transition-transform duration-200 ${
-                          mobileOpenDropdown === item.name ? "rotate-180" : ""
+                          openDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                     
-                    {mobileOpenDropdown === item.name && (
+                    {openDropdown === item.name && (
                       <div className="pl-4 mt-2 space-y-2 border-l border-border">
                         {item.dropdown.map((link) => (
                           <Link
                             key={link.path}
                             to={link.path}
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              closeDropdown();
+                            }}
                             className={`block py-2 text-sm ${
                               location.pathname === link.path 
                                 ? "text-primary font-medium" 
