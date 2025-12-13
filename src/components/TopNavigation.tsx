@@ -17,14 +17,14 @@ const TopNavigation = () => {
   }, []);
 
   const MobileLinks = [
-    { name: "For Schools", path: "/" },
+    { name: "For Schools", path: "/for-schools" },
     { name: "Search", path: "/contact" },
-      { name: "About Us", path: "/aboutUs" },
+    { name: "About Us", path: "/aboutUs" },
     { name: "Programs", path: "/programs" },
   ];
 
     const navLinks = [
-    { name: "For Schools", path: "/" },
+    { name: "For Schools", path: "/for-schools" },
     { name: "Own a franchise", path: "" },
     { name: "Find a Program", path: "" },
     { name: "MyCobotSchool", path: "" },
