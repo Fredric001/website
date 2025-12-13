@@ -5,7 +5,7 @@ import Vision from "@/components/ourStory/Vision";
 import Expert from "@/components/ourStory/Expert";
 import Navigation from "@/components/Navigation";
 import Stats from "@/components/home/Stats";
-import Skills from "@/components/ourStory/Skills";
+import Skills from "@/components/forShools/Skills";
 import Footer from "@/components/Footer";
 import TopNavigation from "@/components/TopNavigation";
 import Logo from "@/components/Logo";
@@ -64,11 +64,12 @@ const ForSchools = () => {
       <Navigation />
       <main>
         <Hero />
+        <Skills/>
         {/* <Mission/>
         <Vision/>
         <Expert/>
         <Stats/>
-        <Skills/>
+        
         <Testimonials/>
         <How/>
         <Acheivements/>

@@ -66,8 +66,13 @@ const Navigation = () => {
     setOpenDropdown(openDropdown === itemName ? null : itemName);
   };
 
-  const closeDropdown = () => {
+  const closeAll = () => {
+    setIsMobileMenuOpen(false);
     setOpenDropdown(null);
+  };
+
+  const handleMobileLinkClick = (path) => {
+    closeAll();
   };
 
   const isDropdownActive = (item) => {
@@ -86,7 +91,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2" onClick={closeDropdown}>
+          <Link to="/" className="flex items-center space-x-2" onClick={closeAll}>
             <div className="font-serif text-2xl font-bold text-primary">
               <Logo/>
             </div>
@@ -120,7 +125,7 @@ const Navigation = () => {
                           <Link
                             key={link.path}
                             to={link.path}
-                            onClick={closeDropdown}
+                            onClick={() => setOpenDropdown(null)}
                             className={`block px-4 py-2 text-sm transition-colors hover:bg-primary/10 hover:text-primary ${
                               location.pathname === link.path 
                                 ? "bg-primary/10 text-primary" 
@@ -136,7 +141,7 @@ const Navigation = () => {
                 ) : (
                   <Link
                     to={item.path}
-                    onClick={closeDropdown}
+                    onClick={() => setOpenDropdown(null)}
                     className={`text-sm font-medium transition-colors hover:text-primary ${
                       location.pathname === item.path ? "text-primary" : "text-foreground"
                     }`}
@@ -161,54 +166,42 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Navigation Menu - FIXED VERSION */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background border-t border-border py-4 animate-in slide-in-from-top-5 duration-200">
+          <div className="md:hidden bg-background border-t border-border  animate-in slide-in-from-top-5 duration-200">
             {navItems.map((item) => (
-              <div key={item.name} className="px-4 py-2">
+              <div key={item.name} className="px-2">
                 {item.dropdown ? (
-                  <div>
-                    <button
-                      onClick={() => toggleDropdown(item.name)}
-                      className={`flex items-center justify-between w-full text-left text-sm font-medium py-2 ${
-                        isDropdownActive(item) ? "text-primary" : "text-foreground"
-                      }`}
-                    >
+                  <div className="py-2">
+                    {/* Mobile dropdown header - shows the main category */}
+                    <div className={`text-sm font-medium py-2 ${
+                      isDropdownActive(item) ? "text-primary" : "text-foreground"
+                    }`}>
                       {item.name}
-                      <ChevronDown 
-                        size={16} 
-                        className={`transition-transform duration-200 ${
-                          openDropdown === item.name ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
+                    </div>
                     
-                    {openDropdown === item.name && (
-                      <div className="pl-4 mt-2 space-y-2 border-l border-border">
-                        {item.dropdown.map((link) => (
-                          <Link
-                            key={link.path}
-                            to={link.path}
-                            onClick={() => {
-                              setIsMobileMenuOpen(false);
-                              closeDropdown();
-                            }}
-                            className={`block py-2 text-sm ${
-                              location.pathname === link.path 
-                                ? "text-primary font-medium" 
-                                : "text-foreground"
-                            }`}
-                          >
-                            {link.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    {/* Mobile dropdown links - ALWAYS VISIBLE in mobile */}
+                    <div className="pl-4 space-y-2 border-l border-border">
+                      {item.dropdown.map((link) => (
+                        <Link
+                          key={link.path}
+                          to={link.path}
+                          onClick={closeAll}
+                          className={`block py-1 text-sm ${
+                            location.pathname === link.path 
+                              ? "text-primary font-medium" 
+                              : "text-foreground"
+                          }`}
+                        >
+                          {link.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 ) : (
                   <Link
                     to={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={closeAll}
                     className={`block text-sm font-medium py-2 ${
                       location.pathname === item.path ? "text-primary" : "text-foreground"
                     }`}
@@ -219,7 +212,7 @@ const Navigation = () => {
               </div>
             ))}
             
-            <div className="px-4 py-4">
+            <div className="px-4 py-2">
               <Button variant="default" size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
                 Location
               </Button>
@@ -231,4 +224,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navigation;  
