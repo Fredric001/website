@@ -67,39 +67,41 @@ function Commitment() {
             </div>
           ))}
         </div>
-        {/* CTA BUTTONS */}
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8" >
-          <div className="text-center mb-16" style={{borderRadius:"2px solid blue "}}>
-            <h2 className="font-serif text-4xl md:text-1xl font-bold  mb-4" style={{color:"red"}}>
-              I'm a Parent
-            </h2>
-            <div className="text-center mt-16">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                CHOOSE A LOCATION{" "}
-              </button>
-            </div>
-          </div>
-          <div className="text-center mb-16" style={{borderRadius:"2px solid blue "}}>
-            <h2 className="font-serif text-4xl md:text-1xl font-bold  mb-4" style={{color:"red"}}>
-            I'm interested in opening a Logiscool Franchise
-            </h2>
-            <div className="text-center mt-16">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                LEARN MORE
-              </button>
-            </div>
-          </div>
-          <div className="text-center mb-16" style={{borderRadius:"2px solid blue "}}>
-            <h2 className="font-serif text-4xl md:text-1xl font-bold  mb-4" style={{color:"red"}}>
-             I work for a school interested in cooperation
-            </h2>
-            <div className="text-center mt-16">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                 LEARN MORE
-              </button>
-            </div>
-          </div>
-        </div>
+       {/* CTA BUTTONS */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+  <div className="text-center p-6 sm:p-8 border-2 border-blue-200 rounded-xl hover:border-blue-400 transition-colors">
+    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 mb-4 sm:mb-6">
+      I'm a Parent
+    </h2>
+    <div className="mt-8 sm:mt-16">
+      <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base w-full sm:w-auto">
+        CHOOSE A LOCATION
+      </button>
+    </div>
+  </div>
+  
+  <div className="text-center p-6 sm:p-8 border-2 border-blue-200 rounded-xl hover:border-blue-400 transition-colors">
+    <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-red-600 mb-4 sm:mb-6">
+      I'm interested in opening a Logiscool Franchise
+    </h2>
+    <div className="mt-8 sm:mt-16">
+      <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base w-full sm:w-auto">
+        LEARN MORE
+      </button>
+    </div>
+  </div>
+  
+  <div className="text-center p-6 sm:p-8 border-2 border-blue-200 rounded-xl hover:border-blue-400 transition-colors">
+    <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-red-600 mb-4 sm:mb-6">
+      I work for a school interested in cooperation
+    </h2>
+    <div className="mt-8 sm:mt-16">
+      <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base w-full sm:w-auto">
+        LEARN MORE
+      </button>
+    </div>
+  </div>
+</div>
       </div>
     </section>
   );
