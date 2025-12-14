@@ -25,7 +25,7 @@ const TopNavigation = () => {
 
     const navLinks = [
     { name: "For Schools", path: "/for-schools" },
-    { name: "Own a franchise", path: "" },
+    { name: "Own a franchise", path: "/own-a-franchise" },
     { name: "Find a Program", path: "" },
     { name: "MyCobotSchool", path: "" },
     { name: "Teachers", path: "" },

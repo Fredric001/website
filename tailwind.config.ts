@@ -14,8 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        'custom': ['Raleway', 'Manrope', 'Cairo', 'Helvetica Neue', 'Arial', '-apple-system', 'BlinkMacSystemFont', 'Apple Color Emoji', 'Segoe UI', 'Segoe UI Emoji', 'Segoe UI Symbol', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

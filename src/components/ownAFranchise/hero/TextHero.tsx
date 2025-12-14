@@ -35,7 +35,7 @@ function TextHero() {
       >
        <div className="text-center mt-16">
           <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-8 py-2 rounded-full font-bold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-          Schedule  a consultation!
+          Request more information
           </button>
         </div>
       </motion.h1>

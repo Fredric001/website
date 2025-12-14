@@ -21,7 +21,7 @@ const About = () => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust time as needed
+    }, 5000); // Adjust time as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -33,7 +33,7 @@ const About = () => {
       <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-1">
-            <div className="  rounded-sm animate-bounce [animation-delay:-0.3s]">
+            <div className="  rounded-sm animate-bounce ">
               <Logo />
             </div>
           </div>

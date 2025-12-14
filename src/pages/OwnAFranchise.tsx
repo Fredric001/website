@@ -1,22 +1,29 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import Hero from "@/components/ownAFranchise/Hero";
+import InsightsFromExperts from "@/components/forShools/InsightsFromExperts";
+import Funbase from "@/components/forShools/FunBased";
+import Award from "@/components/forShools/Award";
+import Scoolcode from "@/components/forShools/Scoolcode";
+import Mission from "@/components/ourStory/Mission";
+import Vision from "@/components/ourStory/Vision";
+import Expert from "@/components/ourStory/Expert";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import Hero from "@/components/home/Hero";
-import Features from "@/components/home/Features";
 import Stats from "@/components/home/Stats";
-import Testimonials from "@/components/home/Testimonials";
-import CTA from "@/components/home/CTA";
+import Skills from "@/components/forShools/Skills";
+import Footer from "@/components/Footer";
 import TopNavigation from "@/components/TopNavigation";
-import Strips from "@/components/Strips";
-import SubBlog from "@/components/home/SubBlog";
-import Acheivements from "@/components/home/Acheivements";
-import WhyCobot from "@/components/home/WhyCobot";
-import New from "@/components/home/New";
-import LevelAndPartnership from "@/components/home/LevelAndPartnership";
 import Logo from "@/components/Logo";
-const Index = () => {
+import Testimonials from "@/components/home/Testimonials";
+import How from "@/components/ourStory/How";
+import Acheivements from "@/components/home/Acheivements"
+// import Funbase from "@/components/ourStory/FunBased";
+import Commitment from "@/components/ourStory/Commitment";
+import NewsLetter from "@/components/NewsLetter";
+import SubBlog from "@/components/forShools/SubBlog";
+import CTA from "@/components/forShools/CTA";
+import Form from "@/components/Form";
+const ForSchools = () => {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -25,12 +32,15 @@ const Index = () => {
 
     return () => clearTimeout(timer);
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (loading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-1">
-            <div className="  rounded-sm animate-bounce ">
+            <div className="  rounded-sm animate-bounce [animation-delay:-0.3s]">
               <Logo />
             </div>
           </div>
@@ -61,22 +71,21 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
-        <Features />
-        <Stats />
-        <Strips />
-        <SubBlog />
-        <Strips />
-        <Acheivements />
-        <Testimonials />
-        <WhyCobot />
-        <Strips />
-        <New />
-        <LevelAndPartnership />
-        <CTA />
+        <Stats/>
+
+        {/* <Skills/> */}
+        <Testimonials/>
+        <Funbase/>
+        <Award/>
+        <Scoolcode/>
+        <SubBlog/>
+        <CTA/>
+        <Form/>
+        
       </main>
-      <Footer />
+        <Footer />
     </div>
   );
 };
 
-export default Index;
+export default ForSchools;

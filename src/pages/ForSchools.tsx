@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Hero from "@/components/forShools/Hero";
+import InsightsFromExperts from "@/components/forShools/InsightsFromExperts";
+import Funbase from "@/components/forShools/FunBased";
+import Award from "@/components/forShools/Award";
+import Scoolcode from "@/components/forShools/Scoolcode";
 import Mission from "@/components/ourStory/Mission";
 import Vision from "@/components/ourStory/Vision";
 import Expert from "@/components/ourStory/Expert";
@@ -12,16 +16,19 @@ import Logo from "@/components/Logo";
 import Testimonials from "@/components/home/Testimonials";
 import How from "@/components/ourStory/How";
 import Acheivements from "@/components/home/Acheivements"
-import Funbase from "@/components/ourStory/FunBased";
+// import Funbase from "@/components/ourStory/FunBased";
 import Commitment from "@/components/ourStory/Commitment";
 import NewsLetter from "@/components/NewsLetter";
+import SubBlog from "@/components/forShools/SubBlog";
+import CTA from "@/components/forShools/CTA";
+import Form from "@/components/Form";
 const ForSchools = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust time as needed
+    }, 5000); // Adjust time as needed
 
     return () => clearTimeout(timer);
   }, []);
@@ -65,17 +72,14 @@ const ForSchools = () => {
       <main>
         <Hero />
         <Skills/>
-        {/* <Mission/>
-        <Vision/>
-        <Expert/>
-        <Stats/>
-        
-        <Testimonials/>
-        <How/>
-        <Acheivements/>
+        <InsightsFromExperts/>
         <Funbase/>
-        <Commitment/>
-        <NewsLetter/> */}
+        <Award/>
+        <Scoolcode/>
+        <SubBlog/>
+        <CTA/>
+        <Form/>
+        
       </main>
         <Footer />
     </div>
