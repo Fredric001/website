@@ -10,7 +10,7 @@ function How() {
             How We Teach: Learning by Doing
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl lg:max-w-3xl mx-auto px-4">
-            At Logiscool, we believe that the best way to learn is by doing. Our
+            At Cobotkids, we believe that the best way to learn is by doing. Our
             practice-based approach makes coding, AI, and digital literacy fun
             and effective through hands-on projects.
           </p>

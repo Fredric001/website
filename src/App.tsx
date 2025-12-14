@@ -14,6 +14,8 @@ import NotFound from "./pages/NotFound";
 import OurStory from "./pages/OurStory"
 import ForSchools from "./pages/ForSchools"
 import OwnAFranchise from "./pages/OwnAFranchise";
+import Exam from "./pages/Exam";
+import Curriculum from "./pages/Curriculum";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/for-schools" element={<ForSchools />} />
           <Route path="/own-a-franchise" element={<OwnAFranchise />} />
+          <Route path="/exams-and-diplomas" element={<Exam />} />
+          <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/results" element={<Results />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/blog" element={<Blog />} />

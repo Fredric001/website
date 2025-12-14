@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Hero from "@/components/ownAFranchise/Hero";
+import Hero from "@/components/exam/Hero";
 import InsightsFromExperts from "@/components/forShools/InsightsFromExperts";
 import Funbase from "@/components/forShools/FunBased";
 import Award from "@/components/forShools/Award";
@@ -20,12 +20,14 @@ import Acheivements from "@/components/home/Acheivements";
 // import Funbase from "@/components/ourStory/FunBased";
 import Commitment from "@/components/ourStory/Commitment";
 import NewsLetter from "@/components/NewsLetter";
-import SubBlog from "@/components/ownAFranchise/SubBlog";
-import CTA from "@/components/ownAFranchise/CTA";
+import SubBlog from "@/components/exam/SubBlog";
+import CTA from "@/components/exam/CTA";
 import Form from "@/components/Form";
 import OurDevelopments from "@/components/ownAFranchise/OurDevelopments";
 import Why from "@/components/ownAFranchise/Why";
-const ForSchools = () => {
+import DigitalExpertise from "@/components/exam/DigitalExpertise";
+import ComparisonTable from "@/components/exam/ComparisonTable";
+const Exam= () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     // Simulate loading time
@@ -75,21 +77,15 @@ const ForSchools = () => {
       <main>
         <Hero />
         <SubBlog />
-        <Stats />
-        <OurDevelopments />
-        <CTA />
-        <Acheivements />
+        <DigitalExpertise/>
+        <ComparisonTable/>
         <Testimonials />
-        <Why />
-        {/* <Funbase /> */}
-        <Award />
-        {/* <Scoolcode /> */}
-
-        <Form />
+        <CTA />
+       
       </main>
       <Footer />
     </div>
   );
 };
 
-export default ForSchools;
+export default Exam;

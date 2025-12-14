@@ -1,32 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Hero from "@/components/ownAFranchise/Hero";
-import InsightsFromExperts from "@/components/forShools/InsightsFromExperts";
-import Funbase from "@/components/forShools/FunBased";
-import Award from "@/components/forShools/Award";
-import Scoolcode from "@/components/forShools/Scoolcode";
-import Mission from "@/components/ourStory/Mission";
-import Vision from "@/components/ourStory/Vision";
-import Expert from "@/components/ourStory/Expert";
-import Navigation from "@/components/Navigation";
-import Stats from "@/components/ownAFranchise/Stats";
-import Stand from "@/components/ownAFranchise/Stand";
-import Skills from "@/components/forShools/Skills";
-import Footer from "@/components/Footer";
-import TopNavigation from "@/components/TopNavigation";
 import Logo from "@/components/Logo";
+import Hero from "@/components/curriculum/Hero";
+import TopNavigation from "@/components/TopNavigation";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import SubBlog from "@/components/curriculum/SubBlog";
+import LearnByDo from "@/components/curriculum/LearnByDo";
+import OurPlatforms from "@/components/curriculum/OurPlatforms";
+import CTA from "@/components/curriculum/CTA";
+import Archivements from "@/components/home/Acheivements";
 import Testimonials from "@/components/home/Testimonials";
-import How from "@/components/ourStory/How";
-import Acheivements from "@/components/home/Acheivements";
-// import Funbase from "@/components/ourStory/FunBased";
-import Commitment from "@/components/ourStory/Commitment";
-import NewsLetter from "@/components/NewsLetter";
-import SubBlog from "@/components/ownAFranchise/SubBlog";
-import CTA from "@/components/ownAFranchise/CTA";
-import Form from "@/components/Form";
-import OurDevelopments from "@/components/ownAFranchise/OurDevelopments";
-import Why from "@/components/ownAFranchise/Why";
-const ForSchools = () => {
-  const [loading, setLoading] = useState(true);
+import WhyCobot from "@/components/curriculum/WhyCobot";
+import Roadmap from "@/components/curriculum/Roadmap";
+function Curriculum() {
+     const [loading, setLoading] = useState(true);
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -67,29 +54,25 @@ const ForSchools = () => {
       </div>
     );
   }
-
   return (
-    <div className="min-h-screen">
+     <div className="min-h-screen">
       <TopNavigation />
       <Navigation />
       <main>
         <Hero />
-        <SubBlog />
-        <Stats />
-        <OurDevelopments />
-        <CTA />
-        <Acheivements />
-        <Testimonials />
-        <Why />
-        {/* <Funbase /> */}
-        <Award />
-        {/* <Scoolcode /> */}
-
-        <Form />
+        <SubBlog/>
+       <LearnByDo/>
+       <OurPlatforms/>
+       <CTA/>
+       <Archivements/>
+       <CTA/>
+       <Testimonials/>
+       <WhyCobot/>
+       <Roadmap/>
       </main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default ForSchools;
+export default Curriculum
