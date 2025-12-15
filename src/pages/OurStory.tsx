@@ -37,22 +37,9 @@ const About = () => {
               <Logo />
             </div>
           </div>
-          <div className="flex items-center justify-center space-x-2 mb-2">
-            <h2 className="text-2xl font-serif font-bold text-foreground  rounded-sm animate-bounce [animation-delay:-0.3s]">
-              Cobot
-            </h2>
-            <h2 className="text-2xl font-serif font-bold text-foreground  rounded-sm animate-bounce [animation-delay:-0.6s]">
-              Kids
-            </h2>
-            <h2 className="text-2xl font-serif font-bold text-foreground   rounded-sm animate-bounce">
-              Academy
-            </h2>
-          </div>
+         
 
-          <p className=" text-muted-foreground">
-            Empowering young minds through innovative technology education in
-            Kenya.
-          </p>
+          
         </div>
       </div>
     );
