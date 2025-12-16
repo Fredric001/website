@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  CircleUser,
+  ShoppingCart,
+  Search,
+} from "lucide-react";
+
 
 const TopNavigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,9 +26,10 @@ const TopNavigation = () => {
 
   const MobileLinks = [
     { name: "For Schools", path: "/for-schools" },
-    { name: "Search", path: "/contact" },
-    { name: "About Us", path: "/aboutUs" },
-    { name: "Programs", path: "/programs" },
+    { name: "Own a franchise", path: "/own-a-franchise" },
+    // { name: "Find a Program", path: "" },
+    { name: "MyCobotSchool", path: "" },
+    // { name: "Teachers", path: "teachers" },
   ];
 
     const navLinks = [
@@ -28,9 +37,8 @@ const TopNavigation = () => {
     { name: "Own a franchise", path: "/own-a-franchise" },
     { name: "Find a Program", path: "" },
     { name: "MyCobotSchool", path: "" },
-    { name: "Teachers", path: "" },
-    { name: "Cart", path: "" },
-    { name: "Search", path: "" },
+    { name: "Teachers", path: "teachers" },
+  
   ];
   return (
     <nav
@@ -63,13 +71,24 @@ const TopNavigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          {/* <button
-            className="md:hidden p-2 text-foreground"
+           <div style={{ display: "flex", gap: "15px" }}>
+            <Link to="">
+              <CircleUser />
+            </Link>
+            <Link to="">
+              <ShoppingCart />
+            </Link>
+            <Link to="">
+              <Search />
+            </Link>
+             {/* Mobile menu button */}
+          <button
+            className="md:hidden text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button> */}
+          </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -87,9 +106,7 @@ const TopNavigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Button variant="default" size="sm" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-              Location
-            </Button>
+          
           </div>
         )}
       </div>

@@ -11,7 +11,7 @@ const Hero = () => {
       </div>
       
       {/* Content - On top of background */}
-      <div className="relative z-10 min-h-screen flex flex-col">
+      <div className="relative  min-h-screen flex flex-col">
         {/* Hero Content */}
         <div className="flex-grow flex items-center">
           <div className="container mx-auto px-4">

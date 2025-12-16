@@ -16,15 +16,20 @@ import LevelAndPartnership from "@/components/home/LevelAndPartnership";
 import Logo from "@/components/Logo";
 const Index = () => {
   const [loading, setLoading] = useState(true);
+  const [notification, setNotification] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Adjust time as needed
+
+      setTimeout(() => {
+        setNotification(false);
+      }, 7000); // banner visible for 7s
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
+
   if (loading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-background z-50">
@@ -34,9 +39,6 @@ const Index = () => {
               <Logo />
             </div>
           </div>
-         
-
-         
         </div>
       </div>
     );
@@ -46,6 +48,27 @@ const Index = () => {
     <div className="min-h-screen">
       <TopNavigation />
       <Navigation />
+
+      {notification && !loading && (
+        <div className="fixed top-[72px] left-0 right-0 z-40 flex justify-center animate-slide-down">
+          <div className="mx-4 w-full max-w-6xl">
+            <div className="flex items-center justify-between gap-4 rounded-2xl bg-gradient-to-r from-accent to-accent px-6 py-4 shadow-xl">
+              <p className="text-sm md:text-base font-medium text-white">
+              New updates are live! Explore features, partnerships, and
+                insights.
+              </p>
+
+              <button
+                onClick={() => setNotification(false)}
+                className="rounded-full bg-white/20 px-4 py-1.5 text-sm text-white hover:bg-white/30 transition"
+              >
+                Dismiss
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <main>
         <Hero />
         <Features />
@@ -61,6 +84,7 @@ const Index = () => {
         <LevelAndPartnership />
         <CTA />
       </main>
+
       <Footer />
     </div>
   );

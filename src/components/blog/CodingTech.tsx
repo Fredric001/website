@@ -45,7 +45,7 @@ const TestimonialCard = ({ name, role, color, starsColor, children }) => {
   )
 }
 
-function Testimonials() {
+function CodeTech() {
   const testimonials = [
     {
       id: 1,
@@ -184,4 +184,4 @@ function Testimonials() {
   )
 }
 
-export default Testimonials
+export default CodeTech
